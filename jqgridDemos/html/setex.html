@@ -43,11 +43,11 @@
         }
     </style>
 <script type="text/javascript">
-//jqgridDemos/xml/jsontype.xml
+//../xml/jsontype.xml
 $(function(){
 
 jQuery("#list7").jqGrid({
-   	url:'jqgridDemos/xml/jsontype.xml',
+   	url:'../xml/jsontype.xml',
 	datatype: "json",
    	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
    	colModel:[
@@ -72,7 +72,7 @@ jQuery("#list7").jqGrid({
 jQuery("#list7").jqGrid('navGrid','#pager7',{edit:false,add:false,del:false,refresh:false,searchtext:"Find"});
 
 jQuery("#s1").click( function() {
-	jQuery("#list7").jqGrid('setGridParam',{url:"/jqgridDemos/xml/jsontype_2.xml"}).trigger("reloadGrid")
+	jQuery("#list7").jqGrid('setGridParam',{url:"../xml/jsontype_2.xml"}).trigger("reloadGrid")
 });
 jQuery("#s2").click( function() {
 	jQuery("#list7").jqGrid('setGridParam',{sortname:"amount",sortorder:"asc"}).trigger("reloadGrid");
@@ -89,7 +89,7 @@ jQuery("#s5").click( function() {
 	jQuery("#list7").jqGrid('setGridParam',{rowNum:15}).trigger("reloadGrid");
 });
 jQuery("#s6").click( function() {
-	jQuery("#list7").jqGrid('setGridParam',{url:"/jqgridDemos/xml/jsontype_2.xml",datatype:"xml"}).trigger("reloadGrid");
+	jQuery("#list7").jqGrid('setGridParam',{url:"../xml/jsontype_2.xml",datatype:"xml"}).trigger("reloadGrid");
 });
 jQuery("#s7").click( function() {
 	jQuery("#list7").jqGrid('setCaption',"New Caption 2.0");
