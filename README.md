@@ -1,4 +1,4 @@
 iRobotUI
 ==
 
-xlgwr.ui is a good ui by jquery.
+iRobotUI is a good ui by jquery.
