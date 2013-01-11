@@ -9,7 +9,7 @@
         //////////////////////
         var navtextdefault = $("h2#nav_user_content_top").attr("defaulttext");
         //////console.logsearchs);
-        var tab_load = "/Shared/preload.html";
+        var tab_load = "Shared/preload.html";
         //Tools buttons
         var errortabsIndex = false;
         var SumClick = 0;
@@ -29,7 +29,7 @@
                 var tab_id = "iframe_" + tab_counter.toString();
 
                 //////console.logtab_id.toString()); <iframe id="dialogtools" frameborder='0'>加载中...</iframe>///////
-                $(ui.panel).append("<iframe class='dialogtools' id='" + tab_id + "' frameborder='0'  marginwidth='0' marginheight='0' frameborder='0' vspace='0' hspace='0' src='/Shared/preload.html' datasrc='/Shared/preload.html' ></iframe>");
+                $(ui.panel).append("<iframe class='dialogtools' id='" + tab_id + "' frameborder='0'  marginwidth='0' marginheight='0' frameborder='0' vspace='0' hspace='0' src='Shared/preload.html' datasrc='Shared/preload.html' ></iframe>");
                 // var tab_content = "加载中...请稍候...谢谢...";
                 var clid = tab_id + "-container";
                 //showPageLoadingMsg( "a","加载中"+clid, false);
@@ -40,8 +40,8 @@
 						        dataType: "html",
 							    error:function(req,err){
 								//console.log("addtabs:err,"+tab_id+"err:"+err);
-								$(ui.panel).find("#"+tab_id).attr("src", "/Shared/Error.html");
-								$(ui.panel).find("#"+tab_id).attr("datasrc", "/Shared/Error.html");
+								$(ui.panel).find("#"+tab_id).attr("src", "Shared/Error.html");
+								$(ui.panel).find("#"+tab_id).attr("datasrc", "Shared/Error.html");
 								}
 						});
                 // var endtab_id = "'#" + tab_id + "'";
@@ -156,7 +156,7 @@
 
                 } else {
                     errortabsIndex = false;
-                    tab_load = "/Shared/error.html";
+                    tab_load = "Shared/error.html";
                     messageErrOr("请选择要复制的数据。谢谢！", "复制操作提示");
                     ////console.log"请选择要复制的数据。");
                 }
@@ -170,7 +170,7 @@
 
                 } else {
                     errortabsIndex = false;
-                    tab_load = "/Shared/error.html";
+                    tab_load = "Shared/error.html";
                     messageErrOr("请选择要修改的数据。谢谢！", "修改操作提示");
                     ////console.log"请选择要修改的数据。");
                 }
@@ -185,7 +185,7 @@
 
                 } else {
                     errortabsIndex = false;
-                    tab_load = "/Shared/error.html";
+                    tab_load = "Shared/error.html";
                     messageErrOr("请选择要查看的数据。谢谢！", "明细操作提示");
                     ////console.log"请选择要查看的数据。");
                 }
@@ -200,15 +200,15 @@
 
                 } else {
                     errortabsIndex = false;
-                    tab_load = "/Shared/error.html";
+                    tab_load = "Shared/error.html";
                     messageErrOr("请选择要删除的数据。谢谢！", "删除操作提示");
                     ////console.log"请选择要删除的用户。");
                 }
                 //////console.logid);
             } else {
-			    tab_load = "/Shared/error.html";
+			    tab_load = "Shared/error.html";
                 errortabsIndex = true;
-                tab_load = "/Shared/error.html";
+                tab_load = "Shared/error.html";
             };
             if (errortabsIndex) {
 			    // add tabs
