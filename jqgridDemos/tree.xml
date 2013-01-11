@@ -4,38 +4,38 @@
     <total>1</total>
     <records>1</records>
     <row><cell>1</cell><cell>Loading Data</cell><cell></cell><cell>0</cell><cell>1</cell><cell>10</cell><cell>false</cell><cell>false</cell></row>
-    <row><cell>2</cell><cell>XML Data</cell><cell>/jqgridDemos/html/xmlex.html</cell><cell>1</cell><cell>2</cell><cell>3</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>3</cell><cell>JSON Data</cell><cell>/jqgridDemos/html/jsonex.html</cell><cell>1</cell><cell>4</cell><cell>5</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>4</cell><cell>Load once</cell><cell>/jqgridDemos/html/loadoncex.html</cell><cell>1</cell><cell>6</cell><cell>7</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>5</cell><cell>Array Data</cell><cell>/jqgridDemos/html/localex.html</cell><cell>1</cell><cell>8</cell><cell>9</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>2</cell><cell>XML Data</cell><cell>jqgridDemos/html/xmlex.html</cell><cell>1</cell><cell>2</cell><cell>3</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>3</cell><cell>JSON Data</cell><cell>jqgridDemos/html/jsonex.html</cell><cell>1</cell><cell>4</cell><cell>5</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>4</cell><cell>Load once</cell><cell>jqgridDemos/html/loadoncex.html</cell><cell>1</cell><cell>6</cell><cell>7</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>5</cell><cell>Array Data</cell><cell>jqgridDemos/html/localex.html</cell><cell>1</cell><cell>8</cell><cell>9</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>6</cell><cell>Manipulating</cell><cell></cell><cell>0</cell><cell>11</cell><cell>18</cell><cell>false</cell><cell>false</cell></row>
-    <row><cell>7</cell><cell>Grid Data</cell><cell>/jqgridDemos/html/manipex.html</cell><cell>1</cell><cell>12</cell><cell>13</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>8</cell><cell>Get Methods</cell><cell>/jqgridDemos/html/getex.html</cell><cell>1</cell><cell>14</cell><cell>15</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>9</cell><cell>Set Methods</cell><cell>/jqgridDemos/html/setex.html</cell><cell>1</cell><cell>16</cell><cell>17</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>7</cell><cell>Grid Data</cell><cell>jqgridDemos/html/manipex.html</cell><cell>1</cell><cell>12</cell><cell>13</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>8</cell><cell>Get Methods</cell><cell>jqgridDemos/html/getex.html</cell><cell>1</cell><cell>14</cell><cell>15</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>9</cell><cell>Set Methods</cell><cell>jqgridDemos/html/setex.html</cell><cell>1</cell><cell>16</cell><cell>17</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>10</cell><cell>Advanced</cell><cell></cell><cell>0</cell><cell>19</cell><cell>32</cell><cell>false</cell><cell>false</cell></row>
-    <row><cell>11</cell><cell>Multi Select</cell><cell>/jqgridDemos/html/multiex.html</cell><cell>1</cell><cell>20</cell><cell>21</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>12</cell><cell>Master Detail</cell><cell>/jqgridDemos/html/masterex.html</cell><cell>1</cell><cell>22</cell><cell>23</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>13</cell><cell>Subgrid</cell><cell>/jqgridDemos/html/subgrid.html</cell><cell>1</cell><cell>24</cell><cell>25</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>14</cell><cell>Grid as Subgrid</cell><cell>/jqgridDemos/html/subgrid_grid.html</cell><cell>1</cell><cell>26</cell><cell>27</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>15</cell><cell>Resizing</cell><cell>/jqgridDemos/html/resizeex.html</cell><cell>1</cell><cell>28</cell><cell>28</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>16</cell><cell>Search Big Sets</cell><cell>/jqgridDemos/html/bigset.html</cell><cell>1</cell><cell>30</cell><cell>31</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>11</cell><cell>Multi Select</cell><cell>jqgridDemos/html/multiex.html</cell><cell>1</cell><cell>20</cell><cell>21</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>12</cell><cell>Master Detail</cell><cell>jqgridDemos/html/masterex.html</cell><cell>1</cell><cell>22</cell><cell>23</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>13</cell><cell>Subgrid</cell><cell>jqgridDemos/html/subgrid.html</cell><cell>1</cell><cell>24</cell><cell>25</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>14</cell><cell>Grid as Subgrid</cell><cell>jqgridDemos/html/subgrid_grid.html</cell><cell>1</cell><cell>26</cell><cell>27</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>15</cell><cell>Resizing</cell><cell>jqgridDemos/html/resizeex.html</cell><cell>1</cell><cell>28</cell><cell>28</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>16</cell><cell>Search Big Sets</cell><cell>jqgridDemos/html/bigset.html</cell><cell>1</cell><cell>30</cell><cell>31</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>17</cell><cell>New since beta 3.0</cell><cell></cell><cell>0</cell><cell>33</cell><cell>44</cell><cell>false</cell><cell>false</cell></row>
-    <row><cell>18</cell><cell>Custom Multi Select</cell><cell>/jqgridDemos/html/cmultiex.html</cell><cell>1</cell><cell>34</cell><cell>35</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>19</cell><cell>Subgrid with JSON</cell><cell>/jqgridDemos/html/jsubgrid.html</cell><cell>1</cell><cell>36</cell><cell>37</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>20</cell><cell>After Load Callback</cell><cell>/jqgridDemos/html/loadcml.html</cell><cell>1</cell><cell>38</cell><cell>39</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>21</cell><cell>Resizable Columns</cell><cell>/jqgridDemos/html/resizecol.html</cell><cell>1</cell><cell>40</cell><cell>41</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>22</cell><cell>Hide/Show Columns</cell><cell>/jqgridDemos/html/hideex.html</cell><cell>1</cell><cell>42</cell><cell>43</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>18</cell><cell>Custom Multi Select</cell><cell>jqgridDemos/html/cmultiex.html</cell><cell>1</cell><cell>34</cell><cell>35</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>19</cell><cell>Subgrid with JSON</cell><cell>jqgridDemos/html/jsubgrid.html</cell><cell>1</cell><cell>36</cell><cell>37</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>20</cell><cell>After Load Callback</cell><cell>jqgridDemos/html/loadcml.html</cell><cell>1</cell><cell>38</cell><cell>39</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>21</cell><cell>Resizable Columns</cell><cell>jqgridDemos/html/resizecol.html</cell><cell>1</cell><cell>40</cell><cell>41</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>22</cell><cell>Hide/Show Columns</cell><cell>jqgridDemos/html/hideex.html</cell><cell>1</cell><cell>42</cell><cell>43</cell><cell>true</cell><cell>true</cell></row>
 	
     <row><cell>23</cell><cell>Row Editing (new)</cell><cell></cell><cell>0</cell><cell>45</cell><cell>58</cell><cell>false</cell><cell>false</cell></row>
-    <row><cell>24</cell><cell>Basic Example</cell><cell>/jqgridDemos/html/rowedex1.html</cell><cell>1</cell><cell>46</cell><cell>47</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>25</cell><cell>Custom Edit</cell><cell>/jqgridDemos/html/rowedex2.html</cell><cell>1</cell><cell>48</cell><cell>49</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>26</cell><cell>Using Events</cell><cell>/jqgridDemos/html/rowedex3.html</cell><cell>1</cell><cell>50</cell><cell>51</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>27</cell><cell>Full Control</cell><cell>/jqgridDemos/html/rowedex4.html</cell><cell>1</cell><cell>52</cell><cell>53</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>28</cell><cell>Input types</cell><cell>/jqgridDemos/html/rowedex5.html</cell><cell>1</cell><cell>54</cell><cell>55</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>135</cell><cell>Inline Navigator (new)</cell><cell>/jqgridDemos/html/43rowedex.html</cell><cell>1</cell><cell>56</cell><cell>57</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>24</cell><cell>Basic Example</cell><cell>jqgridDemos/html/rowedex1.html</cell><cell>1</cell><cell>46</cell><cell>47</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>25</cell><cell>Custom Edit</cell><cell>jqgridDemos/html/rowedex2.html</cell><cell>1</cell><cell>48</cell><cell>49</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>26</cell><cell>Using Events</cell><cell>jqgridDemos/html/rowedex3.html</cell><cell>1</cell><cell>50</cell><cell>51</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>27</cell><cell>Full Control</cell><cell>jqgridDemos/html/rowedex4.html</cell><cell>1</cell><cell>52</cell><cell>53</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>28</cell><cell>Input types</cell><cell>jqgridDemos/html/rowedex5.html</cell><cell>1</cell><cell>54</cell><cell>55</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>135</cell><cell>Inline Navigator (new)</cell><cell>jqgridDemos/html/43rowedex.html</cell><cell>1</cell><cell>56</cell><cell>57</cell><cell>true</cell><cell>true</cell></row>
 	
     <row><cell>29</cell><cell>Data Mapping</cell><cell></cell><cell>0</cell><cell>59</cell><cell>66</cell><cell>false</cell><cell>false</cell></row>
-    <row><cell>30</cell><cell>XML Mapping</cell><cell>/jqgridDemos/html/xmlmap.html</cell><cell>1</cell><cell>60</cell><cell>61</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>30</cell><cell>XML Mapping</cell><cell>jqgridDemos/html/xmlmap.html</cell><cell>1</cell><cell>60</cell><cell>61</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>31</cell><cell>JSON Mapping</cell><cell>jsonmap.html</cell><cell>1</cell><cell>62</cell><cell>63</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>32</cell><cell>Data Optimization</cell><cell>jsonopt.html</cell><cell>1</cell><cell>64</cell><cell>65</cell><cell>true</cell><cell>true</cell></row>
 	
