@@ -1,0 +1,179 @@
+﻿
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>开发中 by xlgwr</title>
+    <link rel="shortcut icon" href="../../Content/logo.ico" />
+    <link href="../../Content/themes/redmond/jquery.ui.all.css" rel="stylesheet" title="theme"
+        type="text/css" />
+    <link href="../../Content/themes/xlgwr/xlgwr.all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../Content/jqGrid/css/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../Content/jqGrid/plugins/searchFilter.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../Content/jqGrid/plugins/ui.multiselect.css" />
+		<!--[if IE]>
+
+			<script src="../../Scripts/html5.js"></script>
+
+		<![endif]-->
+    <script src="../../Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-ui.min.js" type="text/javascript"> </script>
+    <script src="../../Content/jqGrid/plugins/ui.multiselect.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/plugins/jquery.tablednd.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/plugins/jquery.contextmenu.js" type="text/javascript"></script>
+    <script src="../../Scripts/xlgwr.base.js" type="text/javascript"></script>
+    <script src="../../Scripts/xlgwr.ui.js" type="text/javascript"></script>        
+    <script src="../../Scripts/xlgwr.tabs.js" type="text/javascript"></script>
+	
+    <style type="text/css">
+	
+	    pre, xmp, plaintext, listing {
+               display: block;
+               font-family: monospace;
+               white-space: pre;
+               margin: 1em 0px;
+               }
+        .test
+        {
+            border: 3px inset red;
+            position: fixed;
+            top: 0;
+            color: red !important;
+        }
+    </style>
+</head>
+<body class="ui-state-default ui-widget-content">
+    <div id="pagebody">
+        <div id="main">
+
+<div style="font-size:12px;">
+
+    This example show how we can load array data.
+
+    In this case we use a addRowData method.
+
+</div>
+
+<br />
+
+<table id="list4"></table>
+
+<script type="text/javascript">
+$(function(){
+jQuery("#list4").jqGrid({
+	datatype: "local",
+	height: 250,
+   	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+   	colModel:[
+   		{name:'id',index:'id', width:60, sorttype:"int"},
+   		{name:'invdate',index:'invdate', width:90, sorttype:"date"},
+   		{name:'name',index:'name', width:100},
+   		{name:'amount',index:'amount', width:80, align:"right",sorttype:"float"},
+   		{name:'tax',index:'tax', width:80, align:"right",sorttype:"float"},		
+   		{name:'total',index:'total', width:80,align:"right",sorttype:"float"},		
+   		{name:'note',index:'note', width:150, sortable:false}		
+   	],
+   	multiselect: true,
+   	caption: "Manipulating Array Data"
+});
+var mydata = [
+		{id:"1",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+		{id:"2",invdate:"2007-10-02",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+		{id:"3",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+		{id:"4",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+		{id:"5",invdate:"2007-10-05",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+		{id:"6",invdate:"2007-09-06",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+		{id:"7",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+		{id:"8",invdate:"2007-10-03",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+		{id:"9",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"}
+		];
+for(var i=0;i<=mydata.length;i++)
+	jQuery("#list4").jqGrid('addRowData',i+1,mydata[i]);
+});
+</script>
+
+<br />
+
+<div style="font-size:12px;">
+
+<b> HTML </b>
+
+<XMP>
+
+...
+
+<table id="list4"></table>
+
+</XMP>    
+
+<b>Java Scrpt code</b>
+
+<XMP>
+
+jQuery("#list4").jqGrid({
+
+	datatype: "local",
+
+	height: 250,
+
+   	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+
+   	colModel:[
+
+   		{name:'id',index:'id', width:60, sorttype:"int"},
+
+   		{name:'invdate',index:'invdate', width:90, sorttype:"date"},
+
+   		{name:'name',index:'name', width:100},
+
+   		{name:'amount',index:'amount', width:80, align:"right",sorttype:"float"},
+
+   		{name:'tax',index:'tax', width:80, align:"right",sorttype:"float"},		
+
+   		{name:'total',index:'total', width:80,align:"right",sorttype:"float"},		
+
+   		{name:'note',index:'note', width:150, sortable:false}		
+
+   	],
+
+   	multiselect: true,
+
+   	caption: "Manipulating Array Data"
+
+});
+
+var mydata = [
+
+		{id:"1",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+
+		{id:"2",invdate:"2007-10-02",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+
+		{id:"3",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+
+		{id:"4",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+
+		{id:"5",invdate:"2007-10-05",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+
+		{id:"6",invdate:"2007-09-06",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+
+		{id:"7",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+
+		{id:"8",invdate:"2007-10-03",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+
+		{id:"9",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"}
+
+		];
+
+for(var i=0;i<=mydata.length;i++)
+
+	jQuery("#list4").jqGrid('addRowData',i+1,mydata[i]);
+
+</XMP>
+
+</div>
+     </div>
+</div>
+
+</body>
+</html>

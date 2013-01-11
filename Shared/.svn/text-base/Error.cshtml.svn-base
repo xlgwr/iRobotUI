@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    //;
+
+    Layout = "~/Areas/GldOne/Views/Shared/_Dialog.cshtml";
+  }
+
+<h2 class="ui-widget-content none">
+    Sorry, an error occurred while processing your request.(请刷新,谢谢!)其它原因:@ViewBag.Title
+</h2>

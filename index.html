@@ -1,74 +1,526 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>开发中 by xlgwr</title>
+    <link rel="shortcut icon" href="Content/logo.ico" />
+    <link href="Content/themes/redmond/jquery.ui.all.css" rel="stylesheet" title="theme"
+        type="text/css" />
+    <link href="Content/themes/xlgwr/xlgwr.all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Content/jqGrid/css/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Content/jqGrid/plugins/searchFilter.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Content/jqGrid/plugins/ui.multiselect.css" />
+		<!--[if IE]>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Irobotui : xlgwr.ui is a good ui by jquery." />
+			<script src="Scripts/html5.js"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		<![endif]-->
+    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui.min.js" type="text/javascript"> </script>
+    <script src="Scripts/jquery.layout.js" type="text/javascript"></script>
+    <script src="Content/jqGrid/js/i18n/grid.locale-cn.js" type="text/javascript"></script>
+  
+    <script src="Content/jqGrid/plugins/ui.multiselect.js" type="text/javascript"></script>
+    <script src="Content/jqGrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="Content/jqGrid/plugins/jquery.tablednd.js" type="text/javascript"></script>
+    <script src="Content/jqGrid/plugins/jquery.contextmenu.js" type="text/javascript"></script>
+    <script src="Scripts/xlgwr.base.js" type="text/javascript"></script>
+    <script src="Scripts/xlgwr.ui.js" type="text/javascript"></script>
+    <script src="Scripts/xlgwr.tabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    </script>
+ <script type="text/javascript">
+	    $.jgrid.no_legacy_api = true;
+        $.jgrid.useJSON = true;
+        jQuery(document).ready(function () {
+		
+            //$('#switcher').themeswitcher();
+			
+			var maintab = $("#tabs_show").tabs();
+            /////////////
+            jQuery("#west-grid").jqGrid({
+                url: "jqgridDemos/tree.xml",
+                datatype: "xml",
+                height: "auto",
+                pager: false,
+                loadui: "disable",
+                colNames: ["id", "Items", "url"],
+                colModel: [
+            { name: "id", width: 1, hidden: true, key: true },
+            { name: "menu", width: 50, resizable: false, align:'left',sortable: false },
+            { name: "url", width: 1, hidden: true }
+        ],
+                treeGrid: true,
+                caption: " jqGrid 示例 ",
+                ExpandColumn: "menu",
+                autowidth: true,
+                //width: 255,
+                rowNum: 200,
+                ExpandColClick: true,
+                treeIcons: { leaf: 'ui-icon-document-b' },
+                onSelectRow: function (rowid) {
+                    var treedata = $("#west-grid").jqGrid('getRowData', rowid);
+                    if (treedata.isLeaf == "true") {
+                        //treedata.url
+                        var st = "#t" + treedata.id;
+                        if ($(st).html() != null) {
+                            maintab.tabs('select', st);
+                        } else {
+                            maintab.tabs('add', st, treedata.menu);
+						//$(st,"#tabs").load(treedata.url);					
 
-    <title>Irobotui</title>
-  </head>
+						//console.log(treedata.url);
+			         		$.ajax({
+						        url: treedata.url,
+						        type: "GET",
+						        dataType: "html",
+						        success : function (req, err) {
+							    //$(st,"#tabs_show").append(req.responseText); 
+								$(st,"#tabs_show").find("iframe").attr("src", treedata.url);
+								$(st,"#tabs_show").find("iframe").attr("datasrc", treedata.url);
+						        },
+								error: function (req, err) {
+							    //$(st,"#tabs_show").append(req.responseText); 
+								$(st,"#tabs_show").find("iframe").attr("src", "Shared/Error.html");
+								$(st,"#tabs_show").find("iframe").attr("datasrc", "Shared/Error.html");
+						        }
+					      });
+				       }
+                    }
+                }
+            });
+            ////////////////////////
+        });
 
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/xlgwr/iRobotUI">View on GitHub</a>
-
-          <h1 id="project_title">Irobotui</h1>
-          <h2 id="project_tagline">xlgwr.ui is a good ui by jquery.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/xlgwr/iRobotUI/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/xlgwr/iRobotUI/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+    </script>
+    <style type="text/css">
+	    pre, xmp, plaintext, listing {
+               display: block;
+               font-family: monospace;
+               white-space: pre;
+               margin: 1em 0px;
+               }
+        .test
+        {
+            border: 3px inset red;
+            position: fixed;
+            top: 0;
+            color: red !important;
+        }
+    </style>
+</head>
+<body class="ui-widget-content">
+    <div id="switcher">
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+    <div id="pageheader">
+        <div id="header">
+            <div id="title" class="ui-widget-content none">
+                <h1>
+                    <a href="http://erp.xuey.net">iRobotUI 1.0.0</a></h1>
+            </div>
+            <div id="logindisplay" class="ui-state-default ui-corner-all">
+                <a href="#">[login on]</a>
+            </div>
+            <div id="themes">
+                <div id="set">
+                    <ul>
+                        <li><a href="#" title="black-tie">
+                            <img src="Content/themes/xlgwr/images/theme_90_black_tie.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="blitzer">
+                            <img src="Content/themes/xlgwr/images/theme_90_blitzer.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="cupertino">
+                            <img src="Content/themes/xlgwr/images/theme_90_cupertino.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="dark-hive">
+                            <img src="Content/themes/xlgwr/images/theme_90_dark_hive.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="dot-luv">
+                            <img src="Content/themes/xlgwr/images/theme_90_dot_luv.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="eggplant">
+                            <img src="Content/themes/xlgwr/images/theme_90_eggplant.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="excite-bike">
+                            <img src="Content/themes/xlgwr/images/theme_90_excite_bike.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="flick">
+                            <img src="Content/themes/xlgwr/images/theme_90_flick.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="hot-sneaks">
+                            <img src="Content/themes/xlgwr/images/theme_90_hot_sneaks.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="humanity">
+                            <img src="Content/themes/xlgwr/images/theme_90_humanity.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="le-frog">
+                            <img src="Content/themes/xlgwr/images/theme_90_le_frog.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="mint-choc">
+                            <img src="Content/themes/xlgwr/images/theme_90_mint_choco.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="overcast">
+                            <img src="Content/themes/xlgwr/images/theme_90_overcast.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="pepper-grinder">
+                            <img src="Content/themes/xlgwr/images/theme_90_pepper_grinder.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="smoothness">
+                            <img src="Content/themes/xlgwr/images/theme_90_smoothness.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="start">
+                            <img src="Content/themes/xlgwr/images/theme_90_start_menu.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="south-street">
+                            <img src="Content/themes/xlgwr/images/theme_90_south_street.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="sunny">
+                            <img src="Content/themes/xlgwr/images/theme_90_sunny.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="swanky-purse">
+                            <img src="Content/themes/xlgwr/images/theme_90_swanky_purse.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="trontastic">
+                            <img src="Content/themes/xlgwr/images/theme_90_trontastic.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="ui-darkness">
+                            <img src="Content/themes/xlgwr/images/theme_90_ui_dark.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="ui-lightness">
+                            <img src="Content/themes/xlgwr/images/theme_90_ui_light.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                        <li><a href="#" title="redmond">
+                            <img src="Content/themes/xlgwr/images/theme_90_windoze.png" alt="image" width="90"
+                                height="90" /></a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="menucontainer">
+			 <div id="menuall">
+                    <div id="menu">
+                        <ul>
+                            <li><a href="#"><span>物流管理</span></a>
+                                <div>
+                                    <ul class="one">
+                                        <li><strong>销售中心</strong></li>
+                                        <li><a href="#"><span>1.报价管理系统</span></a></li>
+                                        <li><a href="#"><span>2.订单管理系统</span></a></li>
+                                        <li><a href="#"><span>3.报价管理系统</span></a></li>
+                                        <li><a href="#"><span>4.报价管理系统</span></a></li>
+                                        <li><a href="#"><span>5.订单管理系统</span></a></li>
+                                        <li><a href="#"><span>6.报价管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>7.销售报表</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>7.1 销售报表</span></a></li>
+                                                    <li><a href="#"><span>7.2 销售报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>采购管理</strong></li>
+                                        <li><a href="#"><span>1.申购系统</span></a></li>
+                                        <li><a href="#"><span>2.辅料申购系统</span></a></li>
+                                        <li><a href="#"><span>3.主料采购系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>4.辅料采购系统</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>4.1 辅料采购系统报表</span></a></li>
+                                                    <li><a href="#"><span>4.2 辅料采购系统报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#"><span>5.主料采购系统</span></a></li>
+                                        <li><a href="#"><span>6.辅料采购系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>7.采购报表</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>7.1 采购报表</span></a></li>
+                                                    <li><a href="#"><span>7.2 采购报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="three">
+                                        <li><strong>仓库中心</strong></li>
+                                        <li><a href="#"><span>1.产品入库系统</span></a></li>
+                                        <li><a href="#"><span>2.主料入库系统</span></a></li>
+                                        <li><a href="#"><span>3.辅料入库系统</span></a></li>
+                                        <li><a href="#"><span>4.产品出库系统</span></a></li>
+                                        <li><a href="#"><span>5.主料出库系统</span></a></li>
+                                        <li><a href="#"><span>6.辅料出库系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>7.仓库报表</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>7.1 仓库报表</span></a></li>
+                                                    <li><a href="#"><span>7.2 仓库报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>生产中心</span></a>
+                                <div>
+                                    <ul class="one">
+                                        <li><strong>生产管理</strong></li>
+                                        <li><a href="#"><span>1.工单作业系统</span></a></li>
+                                        <li><a href="#"><span>2.生产排程系统</span></a></li>
+                                        <li><a href="#"><span>3.物料计划系统</span></a></li>
+                                        <li><a href="#"><span>4.生产领料系统</span></a></li>
+                                        <li><a href="#"><span>5.生产领料系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>6.生产报表</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>6.1 生产报表</span></a></li>
+                                                    <li><a href="#"><span>6.2 生产报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>品质中心</strong></li>
+                                        <li><a href="#"><span>1. IQC管理系统</span></a></li>
+                                        <li><a href="#"><span>2. IPQC管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>3.FQC管理系统</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>3.1 FQC管理系统报表</span></a></li>
+                                                    <li><a href="#"><span>3.2 FQC管理系统报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#"><span>4. OQC管理系统</span></a></li>
+                                        <li><a href="#"><span>5. 实验检测系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>6. 品质报表</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>6.1 品质报表</span></a></li>
+                                                    <li><a href="#"><span>6.2 品质报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="three">
+                                        <li><strong>品质中心</strong></li>
+                                        <li><a href="#"><span>1. IQC管理系统</span></a></li>
+                                        <li><a href="#"><span>2. IPQC管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>3.FQC管理系统</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>3.1 FQC管理系统报表</span></a></li>
+                                                    <li><a href="#"><span>3.2 FQC管理系统报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#"><span>4. OQC管理系统</span></a></li>
+                                        <li><a href="#"><span>5. 实验检测系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>6. 品质报表</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>6.1 品质报表</span></a></li>
+                                                    <li><a href="#"><span>6.2 品质报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>财务管理</span></a>
+                                <div>
+                                    <ul class="one">
+                                        <li><strong>出纳管理</strong></li>
+                                        <li><a href="#" class=""><span>1. 出纳管理系统</span></a></li>
+                                        <li><a href="#"><span>2. 出纳管理系统</span></a></li>
+                                        <li><a href="#"><span>3. 出纳管理系统</span></a></li>
+                                        <li><a href="#"><span>4. 出纳管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>5. 财务报表系统</span></a></li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>款项数据</strong></li>
+                                        <li><a href="#"><span>1.应收款管理系统</span></a></li>
+                                        <li><a href="#"><span>2. 应付款管理系统</span></a></li>
+                                        <li><a href="#"><span>3. 成本管理管理</span></a></li>
+                                        <li><a href="#"><span>4. 项目管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>5. 出纳管理系统</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>人力中心</span></a>
+                                <div>
+                                    <ul class="one">
+                                        <li><strong>考勤数据</strong></li>
+                                        <li><a href="#"><span>1. 职员管理系统</span></a></li>
+                                        <li><a href="#"><span>2. 人事考勤系统</span></a></li>
+                                        <li><a href="#"><span>3. 招聘管理系统</span></a></li>
+                                        <li><a href="#"><span>4. 工资管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>5. 人事报表系统</span></a></li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>日常处理</strong></li>
+                                        <li><a href="#"><span>1. 人事考勤系统</span></a></li>
+                                        <li><a href="#"><span>2. 人事考勤系统</span></a></li>
+                                        <li><a href="#"><span>3. 招聘管理系统</span></a></li>
+                                        <li><a href="#"><span>4. 工资管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>5. 人事报表系统</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>基础信息</span></a>
+                                <div>
+                                    <ul class="one">
+                                        <li><strong>基础数据</strong></li>
+                                        <li><a href="#"><span>1.产品管理系统</span></a></li>
+                                        <li><a href="#"><span>2.客户管理系统</span></a></li>
+                                        <li><a href="#"><span>3.供应商管理系统</span></a></li>
+                                        <li><a href="#"><span>4.主料管理系统</span></a></li>
+                                        <li><a href="#"><span>5.辅料管理系统</span></a></li>
+                                        <li><a href="#"><span>6.刀模管理系统</span></a></li>
+                                        <li><a href="#"><span>7.菲林管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>8.片语管理系统</span></a></li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>系统操作</strong></li>
+                                        <li><a href="#"><span>1.界面个性系统</span></a></li>
+                                        <li><a href="#"><span>2.操作记录系统</span></a></li>
+                                        <li><a href="#"><span>3.日常管理系统</span></a></li>
+                                        <li><a href="#"><span>4.个人信息系统</span></a> </li>
+                                        <li><a href="#"><span>5.界面个性系统</span></a></li>
+                                        <li><a href="#"><span>6.操作记录系统</span></a></li>
+                                        <li><a href="#"><span>7.日常管理系统</span></a></li>
+                                        <li><a href="#" next="triangle"><span>8.报表管理系统</span><span></span></a>
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#"><span>8.1 报表管理系统</span></a></li>
+                                                    <li><a href="#"><span>8.2 报表管理系统</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>帮助中心</span></a>
+                                <div>
+                                    <ul>
+                                        <li><a href="#"><span>1. 查看帮助</span></a></li>
+                                        <li><a href="#"><span>2. 帮助设置</span></a></li>
+                                        <li><a href="#"><span>3. 在线帮助</span></a></li>
+                                        <li><a href="#"><span>4. 意见反馈</span></a></li>
+                                        <li><a href="#" next="triangle"><span>5. 系统说明</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+			</div>
+        </div>
+        <p class="slide">
+            <span id="slide" title="上收" class="btn-slide ui-icon ui-icon-circle-arrow-n"></span>
+        </p>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Irobotui maintained by <a href="https://github.com/xlgwr">xlgwr</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+    <div id="pagebody">
+        <div id="main">
+            <h2 id="nav_user_content_top" class="ui-widget-content none" defaulttext="当前页面：jqCrid示例-->">
+                当前页面：jqCrid示例-->博客园
+            </h2>
+            <!--nav_toolbar-->
+            <div id="ToolBar">
+                <table id="tools-1" class="ui-widget ui-state-default" cellspacing="0" cellpadding="0">
+                    <tr id="tools-1-tr-1-i" data-id="0">
+                        <td>
+                            <a id="Print" falg="t" href="#">打 印</a>
+                        </td>
+                        <td>
+                            <a id="PrintPreview" falg="t" href="#">预览</a>
+                        </td>
+                        <td>
+                            <a id="Export" falg="t" href="#">导出 </a>
+                        </td>
+                        <td>
+                            <a id="Create" falg="t" href="#">新增</a>
+                        </td>
+                        <td>
+                            <a id="Copy" falg="t" href="#">复制</a>
+                        </td>
+                        <td>
+                            <a id="Delete" falg="t" href="#">删除</a>
+                        </td>
+                        <td>
+                            <a id="Edit" falg="t" href="#">修改</a>
+                        </td>
+                        <td>
+                            <a id="Exam" falg="t" href="#">审单</a>
+                        </td>
+                        <td>
+                            <a id="Audit" falg="t" href="#">审核</a>
+                        </td>
+                        <td>
+                            <a id="Details" falg="t" href="#">明细</a>
+                        </td>
+                        <td>
+                            <a id="Search" falg="t" href="#">搜索</a>
+                        </td>
+                        <td>
+                            <a id="F5" href="#">刷新</a>
+                        </td>
+                        <td>
+                            <a id="Help" falg="t" href="#">帮助</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--nav_pt_n_content引用其它页面-->
+            <!--1.Main content引用其它页面 -->
+            <!--1.Main nav -->
+            <div id="nav_user_content_main">
+                 <div id="nav_grids">
+                    <table id="west-grid">
+                    </table>
+                </div>
+            </div>
+            <div id="nav_user_content_sub">
+                <div id="tabs_show">
+                    <ul class="tabs_index ui-helper-clearfix">
+                        <li><span class='ui-icon ui-icon-refresh'>f5</span><a class="href" href="#nav_user_content_userList"
+                            href-index="@hrefi"> 博客园</a><span class='ui-icon ui-icon-newwin'>NewWin</span><span
+                                class='ui-icon ui-icon-arrowthickstop-1-w'>delall</span></li>
+                    </ul>
+                    <div id="nav_user_content_userList" class="tabsdiv">
+                        <iframe class="dialogtools" frameborder='0' marginwidth='0' marginheight='0' frameborder='0'
+                            vspace='0' hspace='0' id="powerAccording" src="http://home.cnblogs.com/group/cordialityERP/"
+                            datasrc="http://home.cnblogs.com/group/cordialityERP/"></iframe>
+                        <div id='tabs-show-roleTabs-1-container' class='wrapper'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="leftorright">
+                <span id="rightgo" title="左收" class="ui-icon  ui-icon-circle-arrow-w"></span>
+            </div>
+        </div>
     </div>
-
-    
-
-  </body>
+    <div id="footer" class="ui-state-default ui-corner-all">
+        <span>© 2012 xlgwr</span>
+        <div id="messageerror" class="ui-state-default ui-corner-all">
+            <div class="ui-widget">
+                <div class="ui-state-error ui-corner-all">
+                    <p>
+                        <span class="ui-icon ui-icon-alert" style="float: left;"></span><strong id="messageerrorOptionText">
+                            错误提示</strong> <span id="messageerrorclose" class="ui-icon ui-icon-circle-close" style="position: absolute;
+                                right: 0; top: 0;"></span>
+                    </p>
+                </div>
+            </div>
+            <p id="messageerrorp">
+                <span id="messageerrorspan"></span>
+            </p>
+        </div>
+    </div>
+    <div id="back-top">
+        <a href="#header"><span></span>Back to Top</a>
+    </div>
+</body>
 </html>

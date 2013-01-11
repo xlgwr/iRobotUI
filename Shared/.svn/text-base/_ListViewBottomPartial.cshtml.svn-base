@@ -1,0 +1,54 @@
+﻿@{
+    var nowPage = ViewBag.NextPage - 1;
+    var nextPage = ViewBag.NextPage;
+    var prePage = ViewBag.PrePage;
+    var totals = ViewBag.Total;
+    var Last = ViewBag.LastPage;
+
+    var controller = ViewBag.Controller;
+    var action = ViewBag.Action;
+ }
+<script language="javascript" type="text/javascript">
+    $(function () {
+        ////////////////列表跳页///////////////////////////////////////////
+        var href = $('#GoTopi').attr("href-data").toString(); //获取要跳的href前端
+        //输入跳页数变化,href也变化.
+        $('#Gopi').change(function () {
+            var Id = new Number($('#Gopi').val()); //获取页数
+
+            var hrefgo = href + Id; //要跳的href与页码
+            //alert(hrefgo);
+            var last = new Number($('#GoTopi').attr("data-id")); //最后页码数
+            //alert(Id + last);
+            //alert(isNaN(Id));
+            //输入页数码验正
+            if (last > 0) {
+                if (isNaN(Id) || Id > last || Id < 0) {
+                    alert("请输入( 0 到 " + last + " )之间的数据.");
+                    $('#Gopi').val(last.toString()).focus();
+                } else {
+                    $('#GoTopi').each(function () { $('#GoTopi').attr("href-data", hrefgo); }); //设置页的href
+                }
+            }
+
+        }).change();
+        ///////////////////////////////////////////////////////////////////////////////
+    })   
+</script>
+<p class="rightzore">
+    <a href="#" class="pages" href-data="@controller/@action/1" >第一页</a>
+    @if (prePage > 1)
+    {
+        <a href="#" class="pages" href-data="@controller/@action/@prePage" >前一页</a>   
+    }
+    @if (nextPage < Last)
+    {
+        <a href="#" class="pages" href-data="@controller/@action/@nextPage" >下一页</a> 
+    }
+    <a href="#" class="pages" href-data="@controller/@action/@Last" >最后一页</a>
+    <br />
+    <br />
+    <input id="Gopi" class="ui-widget-content" type="text" style="width: 5em;" value="1" />
+    <a href="#" id="GoTopi" class="pages" data-id=@Last href-data="@controller/@action/" href-index="@controller">
+        GoTo</a>
+</p>
