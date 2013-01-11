@@ -1,0 +1,127 @@
+.ui-datepicker
+{
+  width:auto!important;
+}
+
+/*
+ by xlgwr
+ *//* TABLE
+----------------------------------------------------------*/
+
+table
+{
+    position: relative;
+    border: 0;
+    border-collapse: collapse;
+    border-radius: 5px 5px 5px 5px!important;
+    -webkit-border-radius: 5px 5px 5px 5px!important;
+    -moz-border-radius: 5px 5px 5px 5px!important;
+}
+
+table.CreateItemtr
+{
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 1.5em;
+    border: 0;
+    z-index: 900;
+}
+table.allwidth
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 98%;
+}
+table.leftt
+{
+    position: relative;
+    text-align: left;
+    width: 100%;
+    left: -5px;
+}
+table.DataItem
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px 0 10px 0;
+}
+
+.rightzore
+{
+    position: relative;
+    right: 0;
+    text-align: right;
+    font-weight: bold;
+    clip: rect(5px, auto, 5px, auto);
+}
+.rightzore b
+{
+    color: Red;
+}
+/*-----------------------tool
+-----------------------------------*/
+table#tools, table#tools-1
+{
+    position: relative;
+    display: block;
+    top:0;
+    left:0;
+    border:0;
+    width: auto;
+    background-color: transparent;
+    background-image: none;
+    z-index:90;
+}
+table#tools tr, table#tools-1 tr
+{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    background-image: none;
+    min-width: 820px;
+    border: 0;
+    border-spacing: 0px;
+}
+table#tools td, table#tools-1 td
+{
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    background-image: none;
+    float: left;
+    border: 0;
+    border-spacing: 0px;
+}
+
+/*
+
+tr:hover
+{
+    background: #E9F4FD;
+}
+
+  select
+*/
+select
+{
+    position: relative;
+    min-height: 1.5em;
+    margin: 1px;
+    text-align: left;
+    width: 100%;
+}
+/*----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+.selecticon
+{
+    position: absolute;
+    cursor: pointer;
+    top: 1px;
+    right: 5px;
+    z-index: 999;
+}
