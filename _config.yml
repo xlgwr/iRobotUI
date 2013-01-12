@@ -1,5 +1,2 @@
-﻿baseurl: /iRobotUI
-auto: true
-server: true
 markdown: rdiscount
 pygments: true
