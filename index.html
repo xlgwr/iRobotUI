@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿---
+layout: default
+title: 我的Blog
+---
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -484,10 +488,22 @@
             <div id="nav_user_content_sub">
                 <div id="tabs_show">
                     <ul class="tabs_index ui-helper-clearfix">
-                        <li><span class='ui-icon ui-icon-refresh'>f5</span><a class="href" href="#nav_user_content_userList"
-                            href-index="@hrefi"> 博客园</a><span class='ui-icon ui-icon-newwin'>NewWin</span><span
+					    <li><span class='ui-icon ui-icon-refresh'>f5</span><a class="href" href="#nav_user_content_blogs"
+                            href-index="@hrefi"> 博客</a><span class='ui-icon ui-icon-newwin'>NewWin</span><span
                                 class='ui-icon ui-icon-arrowthickstop-1-w'>delall</span></li>
+                        <li><span class='ui-icon ui-icon-refresh'>f5</span><a class="href" href="#nav_user_content_userList"
+                            href-index="@hrefi"> 博客园</a><span class='ui-icon ui-icon-newwin'>NewWin</span></li>
+								
                     </ul>
+					<div id="nav_user_content_blogs" class="tabsdiv">
+                       <h2>{{ page.title }}</h2>
+　　                    <p>最新文章</p>
+　　                     <ul>
+　　　　                       {% for post in site.posts %}
+　　　　　              　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　                       　{% endfor %}
+　                    　</ul>
+                    </div>
                     <div id="nav_user_content_userList" class="tabsdiv">
                         <iframe class="dialogtools" frameborder='0' marginwidth='0' marginheight='0' frameborder='0'
                             vspace='0' hspace='0' id="powerAccording" src="http://home.cnblogs.com/group/cordialityERP/"
