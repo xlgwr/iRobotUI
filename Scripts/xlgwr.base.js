@@ -66,7 +66,7 @@ function fakeFixLoader() {
 function autoHeight(removeheight) {
     
     var ifheight = $("body").height() - removeheight;
-    $(".ui-tabs-panel>iframe").height(ifheight-18);
+    $(".ui-tabs-panel>iframe").height(ifheight+12);
 
     $("#nav_grids").height(ifheight+50);
 }
@@ -77,6 +77,7 @@ function getScreenHeight() {
     return window.innerHeight || $(window).height();
 }
 // check position of loader to see if it appears to be "fixed" to center
+
 // if not, use abs positioning
 function checkLoaderPosition() {
     var offset = $loader.offset(),

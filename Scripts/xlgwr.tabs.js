@@ -38,7 +38,8 @@
 						        url: tab_load,
 						        type: "GET",
 						        dataType: "html",
-							    error:function(req,err){
+                                                        async:false,
+							error:function(req,err){
 								//console.log("addtabs:err,"+tab_id+"err:"+err);
 								$(ui.panel).find("#"+tab_id).attr("src", "Shared/Error.html");
 								$(ui.panel).find("#"+tab_id).attr("datasrc", "Shared/Error.html");
