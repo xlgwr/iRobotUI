@@ -1,1 +1,6 @@
-﻿---layout: posttitle: 我的hello,world---h1. {{ page.title }}<p>Hello,World.</p><p>{{ page.date | date_to_string }}</p>
+---
+layout: post
+title: �ҵ�helloword
+---
+
+h1. {{ page.title }}
