@@ -1,0 +1,24 @@
+f---
+layout: default
+title: xlgwr iRobotUI
+---
+
+<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="/iRobotUI{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h1>Interviews, Talks, Etc</h1>
+  <ul class="posts">    
+    <li><span>02 Apr 2012</span> &raquo; <a href="http://erp.xuey.net">iRobotERP</a></li>
+  </ul>
+
+  <h1>Open Source Projects</h1>
+  <ul class="posts">
+  <li><a href="https://github.com/xlgwr/iRobotERP">iRobotERP:</a> iRobotERP is a good ERP by Web.</li>
+    
+  </ul>
+</div>
