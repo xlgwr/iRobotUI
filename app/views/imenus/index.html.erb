@@ -1,0 +1,44 @@
+<%= grid(@imenus_grid) do |g|
+    g.column name:  'ID'  do |imenu|
+    imenu.id
+    end
+    g.column name:  'Title' do |imenu|
+       imenu.title
+    end
+    g.column name:  'Children'  do |imenu|
+       imenu.children
+    end
+    g.column name: 'Data' do |imenu|
+       imenu.data
+    end
+    g.column name: 'Content' do |imenu|
+       imenu.content
+    end
+    g.column name: 'Version' do |imenu|
+       imenu.version
+    end
+    g.column name: 'Create Man' do |imenu|
+       imenu.create_man
+    end
+    g.column name: 'Edit Man' do |imenu|
+       imenu.edit_man
+    end
+   g.column name: 'Create At' do |imenu|
+       imenu.created_at
+    end
+    g.column name: 'Edit At' do |imenu|
+       imenu.updated_at
+    end
+    g.column do |imenu|
+    link_to('Edit', edit_imenu_path(imenu))
+    end
+
+    g.column do |imenu|
+    link_to('New', new_imenu_path)
+    end
+
+    g.column do |imenu|
+    link_to('Destroy', imenu, method: :delete, data: { confirm: "Are you sure?" })
+    end
+ end %>
+

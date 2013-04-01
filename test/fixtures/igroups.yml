@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  select_count: 1
+  active: false
+  plugins: 1
+  create_man: MyString
+  update_man: MyString
+  content: MyText
+
+two:
+  select_count: 1
+  active: false
+  plugins: 1
+  create_man: MyString
+  update_man: MyString
+  content: MyText

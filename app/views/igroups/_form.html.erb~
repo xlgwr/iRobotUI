@@ -1,0 +1,41 @@
+<%= form_for(@igroup) do |f| %>
+  <% if @igroup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@igroup.errors.count, "error") %> prohibited this igroup from being saved:</h2>
+
+      <ul>
+      <% @igroup.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :select_count %><br />
+    <%= f.number_field :select_count %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :plugins %><br />
+    <%= f.number_field :plugins %>
+  </div>
+  <div class="field">
+    <%= f.label :create_man %><br />
+    <%= f.text_field :create_man %>
+  </div>
+  <div class="field">
+    <%= f.label :update_man %><br />
+    <%= f.text_field :update_man %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

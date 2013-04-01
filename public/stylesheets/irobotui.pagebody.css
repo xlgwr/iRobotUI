@@ -1,0 +1,32 @@
+div#main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 98%;
+    _height: 490px;
+}
+h2#nav_user_content_top {
+    position: relative;
+    top: 0;
+    left: 10px;
+    font-size: 1.5em;
+    margin: 10px;
+}
+div#nav_user_content_main {
+    position: absolute;
+    top: 30px;
+    width: 26.3%;
+}
+div#nav_grids {
+    overflow: auto;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+div#nav_user_content_sub {
+    position: absolute;
+    top: 30px;
+    left: 26.3%;
+    width: 76%;
+    }

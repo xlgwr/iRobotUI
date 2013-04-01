@@ -1,0 +1,41 @@
+<h1>Listing man_menus</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Menu</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Select count</th>
+    <th>Active</th>
+    <th>Plugins</th>
+    <th>Create man</th>
+    <th>Update man</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @man_menus.each do |man_menu| %>
+  <tr>
+    <td><%= man_menu.user %></td>
+    <td><%= man_menu.menu %></td>
+    <td><%= man_menu.start_date %></td>
+    <td><%= man_menu.end_date %></td>
+    <td><%= man_menu.select_count %></td>
+    <td><%= man_menu.active %></td>
+    <td><%= man_menu.plugins %></td>
+    <td><%= man_menu.create_man %></td>
+    <td><%= man_menu.update_man %></td>
+    <td><%= man_menu.content %></td>
+    <td><%= link_to 'Show', man_menu %></td>
+    <td><%= link_to 'Edit', edit_man_menu_path(man_menu) %></td>
+    <td><%= link_to 'Destroy', man_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Man menu', new_man_menu_path %>

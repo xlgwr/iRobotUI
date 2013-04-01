@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  a_attr: 1
+  li_attr: 1
+  title: MyString
+  children: 1
+  data: 1
+  content: MyText
+  version: MyString
+  create_man: MyString
+  edit_man: MyString
+
+two:
+  a_attr: 1
+  li_attr: 1
+  title: MyString
+  children: 1
+  data: 1
+  content: MyText
+  version: MyString
+  create_man: MyString
+  edit_man: MyString

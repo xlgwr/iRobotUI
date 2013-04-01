@@ -1,0 +1,26 @@
+<%= grid(@posts_grid) do |g|
+ g.column name:  'ID'  do |post|
+       post.id
+ end
+ g.column name:  'Title' do |post|
+       post.title
+ end
+ g.column name:  'Body'  do |post|
+       post.body
+ end
+ g.column name: 'Published' do |post|
+       post.published
+ end
+
+ g.column do |post|
+    link_to('Edit', edit_post_path(post))
+  end
+
+ g.column do |post|
+    link_to('New', new_post_path)
+  end
+ g.column do |post|
+    link_to('Destroy', post, method: :delete, data: { confirm: "Are you sure?" })
+  end
+ end %>
+

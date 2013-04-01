@@ -1,0 +1,47 @@
+<h1>Listing user_mores</h1>
+
+<table>
+  <tr>
+    <th>Born</th>
+    <th>Tel</th>
+    <th>Fax</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>State</th>
+    <th>Comefrom</th>
+    <th>Select count</th>
+    <th>Active</th>
+    <th>Plugins</th>
+    <th>Create man</th>
+    <th>Update man</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_mores.each do |user_more| %>
+  <tr>
+    <td><%= user_more.born %></td>
+    <td><%= user_more.tel %></td>
+    <td><%= user_more.fax %></td>
+    <td><%= user_more.firstname %></td>
+    <td><%= user_more.lastname %></td>
+    <td><%= user_more.state %></td>
+    <td><%= user_more.comefrom %></td>
+    <td><%= user_more.select_count %></td>
+    <td><%= user_more.active %></td>
+    <td><%= user_more.plugins %></td>
+    <td><%= user_more.create_man %></td>
+    <td><%= user_more.update_man %></td>
+    <td><%= user_more.content %></td>
+    <td><%= link_to 'Show', user_more %></td>
+    <td><%= link_to 'Edit', edit_user_more_path(user_more) %></td>
+    <td><%= link_to 'Destroy', user_more, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User more', new_user_more_path %>

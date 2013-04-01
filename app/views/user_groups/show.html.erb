@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_group.user %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @user_group.group %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @user_group.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @user_group.end_date %>
+</p>
+
+<p>
+  <b>Select count:</b>
+  <%= @user_group.select_count %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @user_group.active %>
+</p>
+
+<p>
+  <b>Plugins:</b>
+  <%= @user_group.plugins %>
+</p>
+
+<p>
+  <b>Create man:</b>
+  <%= @user_group.create_man %>
+</p>
+
+<p>
+  <b>Update man:</b>
+  <%= @user_group.update_man %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @user_group.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_group_path(@user_group) %> |
+<%= link_to 'Back', user_groups_path %>

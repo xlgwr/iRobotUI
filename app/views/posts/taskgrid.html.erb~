@@ -1,0 +1,19 @@
+<%= grid(@posts_grid) do |g|
+ g.column do |post|
+       post.id
+ end
+ g.column do |post|
+       post.title
+ end
+ g.column do |post|
+       post.body
+ end
+ g.column do |post|
+       post.published
+ end
+
+ g.column do |post|
+    link_to('Edit', edit_post_path(post))
+  end
+ end %>
+

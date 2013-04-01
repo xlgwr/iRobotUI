@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>A attr:</b>
+  <%= @imenu.a_attr %>
+</p>
+
+<p>
+  <b>Li attr:</b>
+  <%= @imenu.li_attr %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @imenu.title %>
+</p>
+
+<p>
+  <b>Children:</b>
+  <%= @imenu.children %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @imenu.data %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @imenu.content %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @imenu.version %>
+</p>
+
+<p>
+  <b>Create man:</b>
+  <%= @imenu.create_man %>
+</p>
+
+<p>
+  <b>Edit man:</b>
+  <%= @imenu.edit_man %>
+</p>
+
+
+<%= link_to 'Edit', edit_imenu_path(@imenu) %> |
+<%= link_to 'Back', imenus_path %>

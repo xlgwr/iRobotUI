@@ -1,0 +1,2 @@
+module ImenusHelper
+end

@@ -1,0 +1,63 @@
+﻿
+
+.ui-tabs .ui-tabs-nav{
+      width: 200%;
+}
+
+div#tabs_show {
+     position: relative;
+     overflow: hidden;
+     top: 0;
+     left: 0;
+ }
+ div#tabs_show li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+ div#tabs_show li span {
+      position: relative;
+      float: left;
+      margin: 5px 2px 5px 2px;
+      cursor: pointer;
+}
+span#tabs_span_irobot{
+    text-indent: -99999px;
+    position: absolute;
+    right: 0;
+	top: 10px;
+    overflow: hidden;
+    background-image: url("d.png");
+    background-position: -60px -40px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    text-indent: -99999px;
+    z-index:100;
+
+}
+div#tabs_show > div {
+    height: auto;
+    overflow: hidden;
+	padding: .5em 0 0 .5em;
+}
+div#tabs_show .iframesub {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+div#tabs_show .iframesubwidth {
+
+    width: 100%;
+}
+div#tabs_show .iframesubwidthleft {
+
+    width: 100%;
+}
+
+div#tabs_show .iframesubheight {
+     height: 66.6%;
+     min-height:430px;
+}
+div#tabs_show .iframesubheighttop {
+    min-height:520px;
+    height: 80.5%;
+}

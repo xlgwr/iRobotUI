@@ -1,0 +1,39 @@
+ div#tabs_show {
+     position: relative;
+     overflow: hidden;
+     top: 0;
+     left: 0;
+ }
+ div#tabs_show li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+ div#tabs_show li span {
+      position: relative;
+      float: left;
+      margin: 5px 2px 5px 2px;
+      cursor: pointer;
+}
+div#tabs_show > div {
+    height: auto;
+    overflow: hidden;
+}
+div#tabs_show .iframesub {
+    position: relative;
+    top: 0;
+    left: -18px;
+}
+div#tabs_show .iframesubwidth {
+
+    width: 104%;
+}
+div#tabs_show .iframesubwidthleft {
+
+    width: 103%;
+}
+
+div#tabs_show .iframesubheight {
+     height: 66%;
+     min-height:440px;
+}
+div#tabs_show .iframesubheighttop {
+    min-height:520px;
+    height: 80%;
+}

@@ -1,0 +1,27 @@
+<h1>Listing irobotuis</h1>
+
+<table>
+  <tr>
+    <th>Themesid</th>
+    <th>Menuid</th>
+    <th>Userid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @irobotuis.each do |irobotui| %>
+  <tr>
+    <td><%= irobotui.themesid %></td>
+    <td><%= irobotui.menuid %></td>
+    <td><%= irobotui.userid %></td>
+    <td><%= link_to 'Show', irobotui %></td>
+    <td><%= link_to 'Edit', edit_irobotui_path(irobotui) %></td>
+    <td><%= link_to 'Destroy', irobotui, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Irobotui', new_irobotui_path %>

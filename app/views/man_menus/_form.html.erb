@@ -1,0 +1,57 @@
+<%= form_for(@man_menu) do |f| %>
+  <% if @man_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@man_menu.errors.count, "error") %> prohibited this man_menu from being saved:</h2>
+
+      <ul>
+      <% @man_menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.number_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :menu %><br />
+    <%= f.number_field :menu %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :select_count %><br />
+    <%= f.number_field :select_count %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :plugins %><br />
+    <%= f.number_field :plugins %>
+  </div>
+  <div class="field">
+    <%= f.label :create_man %><br />
+    <%= f.text_field :create_man %>
+  </div>
+  <div class="field">
+    <%= f.label :update_man %><br />
+    <%= f.text_field :update_man %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,0 @@
-﻿@if(Request.IsAuthenticated) {
-    <text>Welcome <b>@Context.User.Identity.Name</b>!
-    [<a class="none ui-widget-content" href="/Account/LogOff">退 出</a>]</text>
-}
-else {
-    @:[<a class="none ui-widget-content" href="/Account/LogOn">登 入</a>]
-}

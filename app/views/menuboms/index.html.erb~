@@ -1,0 +1,50 @@
+<%= grid(@menuboms_grid) do |g|
+    g.column name:  'ID'  do |menubom|
+    menubom.id
+    end
+    g.column name:  'Menu Parent' do |menubom|
+       menubom.menu_parent
+    end
+    g.column name:  'Menu Children'  do |menubom|
+       menubom.menu_children
+    end
+    g.column name: 'Start Data' do |menubom|
+       menubom.start_data
+    end
+    g.column name:'End Data' do |menubom|
+       menubom.end_data
+    end
+    g.column name: 'Select count' do |menubom|
+       menubom.select_count
+    end
+    g.column name: 'Active' do |menubom|
+       menubom.active
+    end
+    g.column name: 'Create Man' do |menubom|
+       menubom.create_man
+    end
+    g.column name: 'Update Man' do |menubom|
+       menubom.update_man
+    end
+   g.column name: 'Create At' do |menubom|
+       menubom.created_at
+    end
+    g.column name: 'Update At' do |menubom|
+       menubom.updated_at
+    end
+  g.column name: 'Content' do |menubom|
+       menubom.content
+    end
+    g.column do |menubom|
+    link_to('Edit', edit_menubom_path(menubom))
+    end
+
+    g.column do |menubom|
+    link_to('New', new_menubom_path)
+    end
+
+    g.column do |menubom|
+    link_to('Destroy', menubom, method: :delete, data: { confirm: "Are you sure?" })
+    end
+ end %>
+

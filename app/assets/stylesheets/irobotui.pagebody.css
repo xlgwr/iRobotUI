@@ -1,0 +1,29 @@
+﻿div#main {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 98%;
+    _height: 490px;
+}
+h2#nav_user_content_top {
+    position: relative;
+    top: 0;
+    left: 10px;
+    font-size: 1.5em;
+    margin: 2px;
+    z-index: 98;
+}
+div#nav_user_content_main {
+    position: absolute;
+    width: 26.3%;
+    z-index: 97;
+}
+div#nav_user_content_main  li{
+   list-style-type: none;
+}
+div#nav_user_content_sub {
+    position: absolute;
+    left: 26.3%;
+    width: 76%;
+    z-index: 92;
+    }

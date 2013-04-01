@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Menu parent:</b>
+  <%= @menubom.menu_parent %>
+</p>
+
+<p>
+  <b>Menu children:</b>
+  <%= @menubom.menu_children %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @menubom.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @menubom.end_date %>
+</p>
+
+<p>
+  <b>Select count:</b>
+  <%= @menubom.select_count %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @menubom.active %>
+</p>
+
+<p>
+  <b>Plugins:</b>
+  <%= @menubom.plugins %>
+</p>
+
+<p>
+  <b>Create man:</b>
+  <%= @menubom.create_man %>
+</p>
+
+<p>
+  <b>Update man:</b>
+  <%= @menubom.update_man %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @menubom.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_menubom_path(@menubom) %> |
+<%= link_to 'Back', menuboms_path %>
