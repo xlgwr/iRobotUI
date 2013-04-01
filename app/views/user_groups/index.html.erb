@@ -1,0 +1,41 @@
+<h1>Listing user_groups</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Group</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Select count</th>
+    <th>Active</th>
+    <th>Plugins</th>
+    <th>Create man</th>
+    <th>Update man</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_groups.each do |user_group| %>
+  <tr>
+    <td><%= user_group.user %></td>
+    <td><%= user_group.group %></td>
+    <td><%= user_group.start_date %></td>
+    <td><%= user_group.end_date %></td>
+    <td><%= user_group.select_count %></td>
+    <td><%= user_group.active %></td>
+    <td><%= user_group.plugins %></td>
+    <td><%= user_group.create_man %></td>
+    <td><%= user_group.update_man %></td>
+    <td><%= user_group.content %></td>
+    <td><%= link_to 'Show', user_group %></td>
+    <td><%= link_to 'Edit', edit_user_group_path(user_group) %></td>
+    <td><%= link_to 'Destroy', user_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User group', new_user_group_path %>

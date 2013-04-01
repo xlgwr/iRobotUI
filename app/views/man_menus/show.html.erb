@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @man_menu.user %>
+</p>
+
+<p>
+  <b>Menu:</b>
+  <%= @man_menu.menu %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @man_menu.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @man_menu.end_date %>
+</p>
+
+<p>
+  <b>Select count:</b>
+  <%= @man_menu.select_count %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @man_menu.active %>
+</p>
+
+<p>
+  <b>Plugins:</b>
+  <%= @man_menu.plugins %>
+</p>
+
+<p>
+  <b>Create man:</b>
+  <%= @man_menu.create_man %>
+</p>
+
+<p>
+  <b>Update man:</b>
+  <%= @man_menu.update_man %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @man_menu.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_man_menu_path(@man_menu) %> |
+<%= link_to 'Back', man_menus_path %>

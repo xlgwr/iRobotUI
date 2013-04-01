@@ -1,0 +1,29 @@
+<%= form_for(@irobotui) do |f| %>
+  <% if @irobotui.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@irobotui.errors.count, "error") %> prohibited this irobotui from being saved:</h2>
+
+      <ul>
+      <% @irobotui.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :themesid %><br />
+    <%= f.text_field :themesid %>
+  </div>
+  <div class="field">
+    <%= f.label :menuid %><br />
+    <%= f.number_field :menuid %>
+  </div>
+  <div class="field">
+    <%= f.label :userid %><br />
+    <%= f.number_field :userid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

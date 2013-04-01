@@ -1,0 +1,3 @@
+class Igroup < ActiveRecord::Base
+  attr_accessible :active, :content, :create_man, :plugins, :select_count, :update_man
+end

@@ -1,0 +1,33 @@
+<h1>Listing igroups</h1>
+
+<table>
+  <tr>
+    <th>Select count</th>
+    <th>Active</th>
+    <th>Plugins</th>
+    <th>Create man</th>
+    <th>Update man</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @igroups.each do |igroup| %>
+  <tr>
+    <td><%= igroup.select_count %></td>
+    <td><%= igroup.active %></td>
+    <td><%= igroup.plugins %></td>
+    <td><%= igroup.create_man %></td>
+    <td><%= igroup.update_man %></td>
+    <td><%= igroup.content %></td>
+    <td><%= link_to 'Show', igroup %></td>
+    <td><%= link_to 'Edit', edit_igroup_path(igroup) %></td>
+    <td><%= link_to 'Destroy', igroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Igroup', new_igroup_path %>

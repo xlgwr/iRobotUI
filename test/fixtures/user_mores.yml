@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  born: 2013-03-28
+  tel: MyString
+  fax: MyString
+  firstname: MyString
+  lastname: MyString
+  state: MyString
+  comefrom: MyString
+  select_count: 1
+  active: false
+  plugins: 1
+  create_man: MyString
+  update_man: MyString
+  content: MyText
+
+two:
+  born: 2013-03-28
+  tel: MyString
+  fax: MyString
+  firstname: MyString
+  lastname: MyString
+  state: MyString
+  comefrom: MyString
+  select_count: 1
+  active: false
+  plugins: 1
+  create_man: MyString
+  update_man: MyString
+  content: MyText

@@ -1,0 +1,53 @@
+body{
+	width:100%;
+	height:100%;
+}
+/* Normalizes marin padding*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dd,ul,ol,iframe,img{margin:0;padding:0;border:0;}
+/*Removes list-style from lists*/
+ul,ol{list-style:none;}
+.bodyifram{
+    width:100%;
+    height:100%;
+        min-width: 300px;
+        min-height: 200px;
+}
+div#pageheader {
+position: relative;
+margin-left: auto;
+margin-right: auto;
+width: 98%;
+bottom: 0;
+z-index: 100;
+}
+div#pagebody {
+position: relative;
+margin-left: auto;
+margin-right: auto;
+width: 98%;
+bottom: 0;
+z-index: 90;
+
+}
+div#leftorright {
+position: absolute;
+top: 40px;
+left: -10px;
+width: 1em;
+cursor: pointer;
+z-index: 99;
+
+}
+
+div#footer {
+position: fixed;
+left: 0;
+right: auto;
+bottom: 0;
+width: 100%;
+text-align: center;
+height: 20px;
+z-index: 91;
+_border: 0;
+_margin-left: -20px;
+}

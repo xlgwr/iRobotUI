@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>开发中 by xlgwr</title>
+  <link rel="shortcut icon" href="assets/logo.ico" />
+   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="ui-widget-content none">
+  <div id="pageheader" class='container'>
+    <div id="header">
+          <div id="title" class="none" >
+            <h2>
+              <a href="#">iRobotUI 1.0.0</a>
+            </h2>
+          </div>
+          <div id="login" class="ui-state-default">
+
+             <%= render 'layouts/login' %>
+          </div>
+          <div id="themes">
+            <div id="themeset" style="display:none;">
+              <ul>
+                        <li><a href="#" title="black-tie">
+                            <img src="/assets/theme_90_black_tie.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="blitzer">
+                            <img src="/assets/theme_90_blitzer.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="cupertino">
+                            <img src="/assets/theme_90_cupertino.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="dark-hive">
+                            <img src="/assets/theme_90_dark_hive.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="dot-luv">
+                            <img src="/assets/theme_90_dot_luv.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="eggplant">
+                            <img src="/assets/theme_90_eggplant.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="excite-bike">
+                            <img src="/assets/theme_90_excite_bike.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="flick">
+                            <img src="/assets/theme_90_flick.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="hot-sneaks">
+                            <img src="/assets/theme_90_hot_sneaks.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="humanity">
+                            <img src="/assets/theme_90_humanity.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="le-frog">
+                            <img src="/assets/theme_90_le_frog.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="mint-choc">
+                            <img src="/assets/theme_90_mint_choco.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="overcast">
+                            <img src="/assets/theme_90_overcast.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="pepper-grinder">
+                            <img src="/assets/theme_90_pepper_grinder.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="smoothness">
+                            <img src="/assets/theme_90_smoothness.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="start">
+                            <img src="/assets/theme_90_start_menu.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="south-street">
+                            <img src="/assets/theme_90_south_street.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="sunny">
+                            <img src="/assets/theme_90_sunny.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="swanky-purse">
+                            <img src="/assets/theme_90_swanky_purse.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="trontastic">
+                            <img src="/assets/theme_90_trontastic.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="ui-darkness">
+                            <img src="/assets/theme_90_ui_dark.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="ui-lightness">
+                            <img src="/assets/theme_90_ui_light.png" alt="image" width="90"height="90" /></a> </li>
+                        <li><a href="#" title="redmond">
+                            <img src="/assets/theme_90_windoze.png" alt="image" width="90"height="90" /></a> </li>
+                    </ul>
+            </div>
+          </div>
+          <div id="menucontainer">
+            <div id="menu" class="ui-helper-reset ui-state-default ui-corner-all clearfix">
+              <ul>
+                <li><a href="#"><span>物流管理</span></a>
+                  <div class="begin columns three ui-helper-clearfix ui-state-default ui-corner-all">
+                    <ul class="one">
+                      <li><strong>销售中心</strong></li>
+                      <li><a href="#" class="parent"><span>1.报价管理系统</span></a></li>
+                      <li><a href="#"><span>2.订单管理系统</span></a></li>
+                      <li><a href="#"><span>3.报价管理系统</span></a></li>
+                      <li><a href="#"><span>4.报价管理系统</span></a></li>
+                      <li><a href="#"><span>5.订单管理系统</span></a></li>
+                      <li><a href="#"><span>6.报价管理系统</span></a></li>
+                      <li><a href="#" next="triangle" class="parent"><span>7.销售报表</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                        <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                          <ul>
+                            <li><a href="#"><span>7.1 销售报表</span></a></li>
+                            <li><a href="#"><span>7.2 销售报表</span></a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                                    <ul class="two">
+                                        <li><strong>采购管理</strong></li>
+                                        <li><a href="#" class="parent"><span>1.申购系统</span></a></li>
+                                        <li><a href="#"><span>2.辅料申购系统</span></a></li>
+                                        <li><a href="#"><span>3.主料采购系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>4.辅料采购系统</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>4.1 辅料采购系统报表</span></a></li>
+                                                    <li><a href="#"><span>4.2 辅料采购系统报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#"><span>5.主料采购系统</span></a></li>
+                                        <li><a href="#"><span>6.辅料采购系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>7.采购报表</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>7.1 采购报表</span></a></li>
+                                                    <li><a href="#"><span>7.2 采购报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="three">
+                                        <li><strong>仓库中心</strong></li>
+                                        <li><a href="#" class="parent"><span>1.产品入库系统</span></a></li>
+                                        <li><a href="#"><span>2.主料入库系统</span></a></li>
+                                        <li><a href="#"><span>3.辅料入库系统</span></a></li>
+                                        <li><a href="#"><span>4.产品出库系统</span></a></li>
+                                        <li><a href="#"><span>5.主料出库系统</span></a></li>
+                                        <li><a href="#"><span>6.辅料出库系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>7.仓库报表</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>7.1 仓库报表</span></a></li>
+                                                    <li><a href="#"><span>7.2 仓库报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>生产中心</span></a>
+                                <div class="columns three ui-helper-clearfix ui-state-default ui-corner-all">
+                                    <ul class="one">
+                                        <li><strong>生产管理</strong></li>
+                                        <li><a href="#" class="parent"><span>1.工单作业系统</span></a></li>
+                                        <li><a href="#"><span>2.生产排程系统</span></a></li>
+                                        <li><a href="#"><span>3.物料计划系统</span></a></li>
+                                        <li><a href="#"><span>4.生产领料系统</span></a></li>
+                                        <li><a href="#"><span>5.生产领料系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>6.生产报表</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>6.1 生产报表</span></a></li>
+                                                    <li><a href="#"><span>6.2 生产报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>品质中心</strong></li>
+                                        <li><a href="#" class="parent"><span>1. IQC管理系统</span></a></li>
+                                        <li><a href="#"><span>2. IPQC管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>3.FQC管理系统</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>3.1 FQC管理系统报表</span></a></li>
+                                                    <li><a href="#"><span>3.2 FQC管理系统报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#"><span>4. OQC管理系统</span></a></li>
+                                        <li><a href="#"><span>5. 实验检测系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>6. 品质报表</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>6.1 品质报表</span></a></li>
+                                                    <li><a href="#"><span>6.2 品质报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="three">
+                                        <li><strong>品质中心</strong></li>
+                                        <li><a href="#" class="parent"><span>1. IQC管理系统</span></a></li>
+                                        <li><a href="#"><span>2. IPQC管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>3.FQC管理系统</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>3.1 FQC管理系统报表</span></a></li>
+                                                    <li><a href="#"><span>3.2 FQC管理系统报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#"><span>4. OQC管理系统</span></a></li>
+                                        <li><a href="#"><span>5. 实验检测系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>6. 品质报表</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>6.1 品质报表</span></a></li>
+                                                    <li><a href="#"><span>6.2 品质报表</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>财务管理</span></a>
+                                <div class="columns two ui-helper-clearfix ui-state-default ui-corner-all">
+                                    <ul class="one">
+                                        <li><strong>出纳管理</strong></li>
+                                        <li><a href="#" class="parent"><span>1. 出纳管理系统</span></a></li>
+                                        <li><a href="#"><span>2. 出纳管理系统</span></a></li>
+                                        <li><a href="#"><span>3. 出纳管理系统</span></a></li>
+                                        <li><a href="#"><span>4. 出纳管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>5. 财务报表系统</span></a></li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>款项数据</strong></li>
+                                        <li><a href="#" class="parent"><span>1.应收款管理系统</span></a></li>
+                                        <li><a href="#"><span>2. 应付款管理系统</span></a></li>
+                                        <li><a href="#"><span>3. 成本管理管理</span></a></li>
+                                        <li><a href="#"><span>4. 项目管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>5. 出纳管理系统</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>人力中心</span></a>
+                                <div class="columns two ui-helper-clearfix ui-state-default ui-corner-all">
+                                    <ul class="one">
+                                        <li><strong>考勤数据</strong></li>
+                                        <li><a href="#" class="parent"><span>1. 职员管理系统</span></a></li>
+                                        <li><a href="#"><span>2. 人事考勤系统</span></a></li>
+                                        <li><a href="#"><span>3. 招聘管理系统</span></a></li>
+                                        <li><a href="#"><span>4. 工资管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>5. 人事报表系统</span></a></li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>日常处理</strong></li>
+                                        <li><a href="#" class="parent"><span>1. 人事考勤系统</span></a></li>
+                                        <li><a href="#"><span>2. 人事考勤系统</span></a></li>
+                                        <li><a href="#"><span>3. 招聘管理系统</span></a></li>
+                                        <li><a href="#"><span>4. 工资管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>5. 人事报表系统</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>基础信息</span></a>
+                                <div class="columns two ui-helper-clearfix ui-state-default ui-corner-all">
+                                    <ul class="one">
+                                        <li><strong>基础数据</strong></li>
+                                        <li><a href="#" class="parent"><span>1.产品管理系统</span></a></li>
+                                        <li><a href="#"><span>2.客户管理系统</span></a></li>
+                                        <li><a href="#"><span>3.供应商管理系统</span></a></li>
+                                        <li><a href="#"><span>4.主料管理系统</span></a></li>
+                                        <li><a href="#"><span>5.辅料管理系统</span></a></li>
+                                        <li><a href="#"><span>6.刀模管理系统</span></a></li>
+                                        <li><a href="#"><span>7.菲林管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>8.片语管理系统</span></a></li>
+                                    </ul>
+                                    <ul class="two">
+                                        <li><strong>系统操作</strong></li>
+                                        <li><a href="#" class="parent"><span>1.界面个性系统</span></a></li>
+                                        <li><a href="#"><span>2.操作记录系统</span></a></li>
+                                        <li><a href="#"><span>3.日常管理系统</span></a></li>
+                                        <li><a href="#"><span>4.个人信息系统</span></a> </li>
+                                        <li><a href="#"><span>5.界面个性系统</span></a></li>
+                                        <li><a href="#"><span>6.操作记录系统</span></a></li>
+                                        <li><a href="#"><span>7.日常管理系统</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>8.报表管理系统</span><span class="ui-icon ui-icon-triangle-1-s"></span></a>
+                                            <div class="ui-helper-clearfix ui-state-highlight ui-corner-all">
+                                                <ul>
+                                                    <li><a href="#"><span>8.1 报表管理系统</span></a></li>
+                                                    <li><a href="#"><span>8.2 报表管理系统</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><span>帮助中心</span></a>
+                                <div class="last ui-helper-clearfix ui-state-default ui-corner-all">
+                                    <ul>
+                                        <li><a href="#" class="parent"><span>1. 查看帮助</span></a></li>
+                                        <li><a href="#"><span>2. 帮助设置</span></a></li>
+                                        <li><a href="#"><span>3. 在线帮助</span></a></li>
+                                        <li><a href="#"><span>4. 意见反馈</span></a></li>
+                                        <li><a href="#" next="triangle" class="parent"><span>5. 系统说明</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+            </div>
+          </div>
+
+    </div>
+    <p class="slide">
+      <span id="slide" title="上收" class="btn-slide ui-icon ui-icon-circle-arrow-n"></span>
+    </p>
+  </div>
+  <div id="pagebody" class='container'>
+    <div id="main">
+      <h2 id="nav_user_content_top" class="ui-widget-content none" defaulttext="当前页面:-->">
+        当前页面：Home </h2>
+      <!--1.content main -->
+      <div id="nav_user_content_main" class="ui-state-default" >
+        <div id="nav_accordion_main">
+          <div class="group">
+            <h3>物流管理</h3>
+            <div>
+              <div id="demo1" class="demo">
+
+              </div>
+            </div>
+          </div>
+
+           <div class="group">
+            <h3>生产中心</h3>
+            <div>
+              <p>生产中心 </p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+          </div>
+           <div class="group">
+            <h3>财务管理</h3>
+            <div>
+              <p>财务管理 </p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+          </div>
+           <div class="group">
+             <h3>人力中心</h3>
+             <div>
+              <p>人力中心 </p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+          </div>
+   <div class="group">
+            <h3>基础信息</h3>
+            <div>
+              <p>基础信息 </p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+          </div>
+          <div class="group">
+            <h3>帮助中心</h3>
+            <div>
+              <div id="demo3" class="demo">
+                <ul>
+                  <li id="shtml_1" class="jstree-open">
+                    <a href="/">Root node 1</a>
+                    <ul>
+                      <li id="shtml_1_1">
+                        <a href="/">Child node1 1</a>
+                      </li>
+                      <li id="shtml_1_2">
+                        <a href="/">Child node1 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="shtml_2">
+                    <a href="/">Root node 2</a>
+                     <ul>
+                      <li id="shtml_2_1">
+                        <a href="/">Child node2 1</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--2.content sub -->
+      <div id="nav_user_content_sub">
+        <div id="tabs_show">
+          <ul>
+
+            <li id='delall'><span class='ui-icon ui-icon-refresh'>f5</span><a class="href" href="#irobotuihome"  href-index="hrefi">Home</a><span class='ui-icon ui-icon-newwin'>NewWin</span><span class='ui-icon ui-icon-arrowthickstop-1-w'>delall</span></li>
+            <span id="tabs_span_irobot" class='ui-icon'>text</span>
+          </ul>
+          <div id="irobotuihome">
+            <iframe class="iframesub iframesubwidth iframesubheight" frameborder='0' marginwidth='0' marginheight='0' frameborder='0' vspace='0' hspace='0' id="rubychina" src="/posts" datasrc="/posts"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div id="leftorright">
+      <span id="rightgo" title="左收" class="ui-icon ui-icon-circle-arrow-w"></span>
+    </div>
+  </div>
+  <div id="footer" class="container ui-state-default ui-corner-all">
+
+  </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;font-size:0;}
+.clearfix{zoom:1;}
+#menu ul, #menu ol {
+list-style: none;
+}
+#menu{ position:relative;top:0;left:0;width:100%;font-family:'微软雅黑';z-index:98;height:39px;}
+#menu ul,#menu li,#menu li a{position:relative;float:left;margin:0}
+#menu li a{height:39px;line-height:38px;text-align:center;font-size:20px;width:118px;margin:0 1px;z-index:90;}
+#menu li a.cur,#menu li a:hover{border-bottom:3px solid;height:34px;text-decoration:none;}
+/* banner &#menu end */
+ #menu li li
+{
+    float: none;
+        display: block;
+    height: 41px;
+    line-height:3em;
+}
+#menu div
+{
+    display: none;
+    position: absolute;
+    left:0;
+    width: 200px;
+}
+#menu div>a:hover{text-decoration:none;}
+
+#menu div.begin
+{
+   /*left:-20px;*/
+   left:1px!important;
+ }
+ #menu div.last
+{
+    padding-top: 0;
+    margin-top: 37px;
+        left:-83px!important;
+}
+#menu ul div li:hover div
+{
+   left:8px;
+   z-index:999;
+ }
+#menu div>ul
+{
+    position: relative;
+        z-index:90;
+}
+#menu div div
+{
+    margin-top: -90px;
+    margin-left: -7px;
+    margin-bottom: 0;
+    margin-right: 0;
+    z-index:99;
+}
+#menu div div
+{
+    _margin-top: -105px;
+    _margin-left: 2px;
+}
+*+html #menu div div
+{
+    margin-top: -105px;
+    margin-left: -7px;
+}
+#menu li:hover > div
+{
+    display: block;
+}
+*:first-child + html #menu div div
+{
+    display: block;
+    top: -9999px;
+}
+*:first-child + html #menu li:hover > div
+{
+    top: auto;
+}
+
+#menu div.columns
+{
+    width: 205px;
+}
+#menu div.show
+{
+    top:-45px;
+    left:1px;
+}
+#menu div.columns ul
+{
+    float: left;
+    width: 200px;
+    position: static;
+}
+#menu div.columns a
+{
+    white-space: normal;
+}
+#menu div.two
+{
+    width: 410px;
+}
+#menu div.three
+{
+    width: 605px;
+}
+#menu div ul div a
+{
+  text-align:left;
+}
+#menu div.three ul.one div div, #menu div.three ul.two div div, #menu div.three ul.three div
+{
+    margin-left: -9px;
+}
+#menu div.four
+{
+    width: 805px;
+}
+#menu div.four ul.one div
+{
+    margin-left: -609px;
+}
+#menu div.four ul.two div
+{
+    margin-left: -409px;
+}
+#menu div.four ul.three div
+{
+    margin-left: -209px;
+}
+#menu div.four ul.one div div, #menu div.four ul.two div div, #menu div.four ul.three div div, #menu div.four ul.four div
+{
+    margin-left: -9px;
+}
+#menu div.five
+{
+    width: 1010px;
+}
+#menu div.five ul.one div
+{
+    margin-left: -809px;
+}
+#menu div.five ul.two div
+{
+    margin-left: -609px;
+}
+#menu div.five ul.three div
+{
+    margin-left: -409px;
+}
+#menu div.five ul.four div
+{
+    margin-left: -209px;
+}
+#menu div.five ul.one div div, #menu div.five ul.two div div, #menu div.five ul.three div div, #menu div.five ul.four div div, #menu div.five ul.five div
+{
+    margin-left: -9px;
+}
+#menu a.parent
+{
+  position:relative;
+  text-align:left;
+}
+#menu a.parent span.ui-icon
+{
+    position:absolute;
+        top:20px;
+        right:5%;
+    padding: 0px;
+}
+#menu div a
+{
+    margin-left: 4px;
+    padding: 4px 0 0 0;
+    width: 190px;
+}
+#menu div a span
+{
+    font-size: 15px;
+    padding: 3px 5px 15px 17px;
+    white-space: normal;
+    z-index: 90;
+}
+
+#menu div ul
+{
+    width: 200px;
+    padding-top: 11px;
+    padding-bottom: 17px;
+}
+
+#menu div div ul
+{
+    padding-top: 0;
+}
+
+#menu div.columns
+{
+    padding-top: 0;
+    margin-top: 39px;
+}
+#menu div div.columns
+{
+    margin-top: -36px;
+}
+#menu div.columns > ul
+{
+    padding-top: 25px;
+    margin-top: -14px;
+}
+/* by xlgwr
+-------------------------------------*/
+#menu li strong
+{
+    font-size: 2em;
+    display: block;
+    margin-left: 25px;
+    white-space: nowrap;
+}
+/* end
+-------------------------------------*/
+
+#menu div.columns > ul > li > a
+{
+    margin-left: 0;
+    width: 200px;
+}
+#menu div.columns ul > li>a
+{
+    z-index: 90;
+}
+#menu div.columns ul > li>div
+{
+    z-index: 99;
+}
+#menu div.columns > ul.one > li > a
+{
+    margin-left: 4px;
+    width: 194px;
+}
+#menu div.two > ul.two > li > a, #menu div.three > ul.three > li > a, #menu div.four > ul.four > li > a, #menu div.five > ul.five > li > a
+{
+    width: 194px;
+}
+
+#menu.active a
+{
+    z-index: 780;
+    position: relative;
+}
+#menu.active li
+{
+    z-index: 778;
+}
+#menu.active div div
+{
+    z-index: 781;
+}
+#menu.active div a
+{
+    position: static;
+}
+
+#menu.active li.back
+{
+    height: 91px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+#menu.active li.back .left
+{
+    display: block;
+    padding: 0;
+    width: auto;
+    height: 91px;
+    margin: 0 5px 0 28px;
+    position: relative;
+    left: 5px;
+}
+
+/*url(images/pix.gif)*/
+#menu.active .spanbox
+{
+    position: absolute;
+    display: none;
+    margin-top: -21px;
+    width: 200px;
+}
+#menu.active div
+{
+    margin-top: -14px;
+    display: block;
+    position: relative;
+}
+#menu.active div .spanbox
+{
+    margin: 0 0 0 -6px;
+    left: 100%;
+}
+#menu.active .spanbox .spanbox
+{
+    margin-top: -50px;
+}
+#menu.active .spanbox .spanbox div
+{
+    margin: 0;
+}
+
+/** ie7 */
+*:first-child + html #menu.active div div
+{
+    top: auto;
+}
+*:first-child + html .menu-images-preloading
+{
+    visibility: hidden;
+}
+
+#menu.active div.two ul.one .spanbox
+{
+    margin-left: -206px;
+}
+#menu.active div.two ul.one .spanbox .spanbox, #menu.active div.two ul.two .spanbox
+{
+    margin-left: -6px;
+}
+#menu.active div.three ul.one .spanbox
+{
+    margin-left: -406px;
+}
+#menu.active div.three ul.two .spanbox
+{
+    margin-left: -206px;
+}
+#menu.active div.three ul.one .spanbox .spanbox, #menu.active div.three ul.two .spanbox .spanbox, #menu.active div.three ul.three .spanbox
+{
+    margin-left: -6px;
+}
+#menu.active div.four ul.one .spanbox
+{
+    margin-left: -606px;
+}
+#menu.active div.four ul.two .spanbox
+{
+    margin-left: -406px;
+}
+#menu.active div.four ul.three .spanbox
+{
+    margin-left: -206px;
+}
+#menu.active div.four ul.one .spanbox .spanbox, #menu.active div.four ul.two .spanbox .spanbox, #menu.active div.four ul.three .spanbox .spanbox, #menu.active div.four ul.four .spanbox
+{
+    margin-left: -6px;
+}
+#menu.active div.five ul.one .spanbox
+{
+    margin-left: -806px;
+}
+#menu.active div.five ul.two .spanbox
+{
+    margin-left: -606px;
+}
+#menu.active div.five ul.three .spanbox
+{
+    margin-left: -406px;
+}
+#menu.active div.five ul.four .spanbox
+{
+    margin-left: -206px;
+}
+#menu.active div.five ul.one .spanbox .spanbox, #menu.active div.five ul.two .spanbox .spanbox, #menu.active div.five ul.three .spanbox .spanbox, #menu.active div.five ul.four .spanbox .spanbox, #menu.active div.five ul.five .spanbox
+{
+    margin-left: -6px;
+}
+#menu.active div.columns ul .spanbox div
+{
+    margin-left: 0;
+}
+#menu.active div.two, #menu.active div.three, #menu.active div.four, #menu.active div.five
+{
+    padding-bottom: 14px;
+}

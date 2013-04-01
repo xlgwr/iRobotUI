@@ -1,0 +1,53 @@
+<%= form_for(@imenu) do |f| %>
+  <% if @imenu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@imenu.errors.count, "error") %> prohibited this imenu from being saved:</h2>
+
+      <ul>
+      <% @imenu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :a_attr %><br />
+    <%= f.number_field :a_attr %>
+  </div>
+  <div class="field">
+    <%= f.label :li_attr %><br />
+    <%= f.number_field :li_attr %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :children %><br />
+    <%= f.number_field :children %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.number_field :data %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :create_man %><br />
+    <%= f.text_field :create_man %>
+  </div>
+  <div class="field">
+    <%= f.label :edit_man %><br />
+    <%= f.text_field :edit_man %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

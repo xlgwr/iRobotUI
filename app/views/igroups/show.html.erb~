@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Select count:</b>
+  <%= @igroup.select_count %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @igroup.active %>
+</p>
+
+<p>
+  <b>Plugins:</b>
+  <%= @igroup.plugins %>
+</p>
+
+<p>
+  <b>Create man:</b>
+  <%= @igroup.create_man %>
+</p>
+
+<p>
+  <b>Update man:</b>
+  <%= @igroup.update_man %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @igroup.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_igroup_path(@igroup) %> |
+<%= link_to 'Back', igroups_path %>

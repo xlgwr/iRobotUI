@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  menu_parent: 1
+  menu_children: 1
+  start_date: 2013-03-27
+  end_date: 2013-03-27
+  select_count: 1
+  active: false
+  plugins: 1
+  create_man: MyString
+  update_man: MyString
+  content: MyText
+
+two:
+  menu_parent: 1
+  menu_children: 1
+  start_date: 2013-03-27
+  end_date: 2013-03-27
+  select_count: 1
+  active: false
+  plugins: 1
+  create_man: MyString
+  update_man: MyString
+  content: MyText
