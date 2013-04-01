@@ -1,7 +1,0 @@
-﻿@{
-    var nowPage = ViewBag.NextPage - 1;
-    var Last = ViewBag.LastPage;
- }
-<p class="rightzore">
-    <strong>当前在第 <b>@nowPage</b> 页，总页数：<b>@Last</b></strong>
-</p>
