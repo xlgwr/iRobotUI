@@ -1,5 +1,0 @@
-<%= grid(@taskgrid) do |g| %>
- g.column do |post|
-       post.id
- end
-

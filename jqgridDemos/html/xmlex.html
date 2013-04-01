@@ -1,0 +1,210 @@
+﻿
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>开发中 by xlgwr</title>
+    <link rel="shortcut icon" href="../../Content/logo.ico" />
+    <link href="../../Content/themes/redmond/jquery.ui.all.css" rel="stylesheet" title="theme"
+        type="text/css" />
+    <link href="../../Content/themes/xlgwr/xlgwr.all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../Content/jqGrid/css/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../Content/jqGrid/plugins/searchFilter.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../../Content/jqGrid/plugins/ui.multiselect.css" />
+		<!--[if IE]>
+
+			<script src="../../Scripts/html5.js"></script>
+
+		<![endif]-->
+    <script src="../../Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-ui.min.js" type="text/javascript"> </script>
+    <script src="../../Content/jqGrid/plugins/ui.multiselect.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/js/i18n/grid.locale-cn.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/plugins/jquery.tablednd.js" type="text/javascript"></script>
+    <script src="../../Content/jqGrid/plugins/jquery.contextmenu.js" type="text/javascript"></script>
+    <script src="../../Scripts/xlgwr.base.js" type="text/javascript"></script>
+    <script src="../../Scripts/xlgwr.ui.js" type="text/javascript"></script>        
+    <script src="../../Scripts/xlgwr.tabs.js" type="text/javascript"></script>
+	
+    <style type="text/css">
+	
+	    pre, xmp, plaintext, listing {
+               display: block;
+               font-family: monospace;
+               white-space: pre;
+               margin: 1em 0px;
+               }
+        .test
+        {
+            border: 3px inset red;
+            position: fixed;
+            top: 0;
+            color: red !important;
+        }
+    </style>
+</head>
+<body class="ui-widget-content">
+    <div id="pagebody">
+        <div id="main">
+                   <table id="list1"></table>
+                    <div id="pager1"></div>
+ <br/>
+ <br/>
+
+            <div id="acc_list1">
+				<div>
+					<h3><a href="#">HTML and Java script </a></h3>
+                <div style="font-size:12px;">
+             <XMP>
+<html>
+...
+<table id="list1"></table>
+<div id="pager1"></div>
+...
+</html>
+<script type="text/javascript"> 
+jQuery().ready(function (){
+jQuery("#list1").jqGrid({
+   	url:"/jqgridDemos/xml/xmltype.xml",
+	datatype: "xml",
+    height: "auto",
+    pager: false,
+    loadui: "disable",
+   	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+   	colModel:[
+   		{name:'id',index:'id', width:75},
+   		{name:'invdate',index:'invdate', width:90},
+   		{name:'name',index:'name', width:100},
+   		{name:'amount',index:'amount', width:80, align:"right"},
+   		{name:'tax',index:'tax', width:80, align:"right"},		
+   		{name:'total',index:'total', width:80,align:"right"},		
+   		{name:'note',index:'note', width:150, sortable:false}		
+   	],
+   	rowNum:10,
+   	autowidth: true,
+   	sortname: 'id',
+    viewrecords: true,
+    sortorder: "desc",
+    caption:"XML Example"
+});					
+</script> 
+</XMP>
+					</div>
+				</div>
+				<div>
+					<h3><a href="#">PHP Code</a></h3>
+					<div style="font-size:12px;">
+<XMP>
+<?php
+$page = $_GET['page']; // get the requested page
+$limit = $_GET['rows']; // get how many rows we want to have into the grid
+$sidx = $_GET['sidx']; // get index row - i.e. user click to sort
+$sord = $_GET['sord']; // get the direction
+if(!$sidx) $sidx =1;
+// connect to the database
+$db = mysql_connect($dbhost, $dbuser, $dbpassword)
+or die("Connection Error: " . mysql_error());
+
+mysql_select_db($database) or die("Error conecting to db.");
+$result = mysql_query("SELECT COUNT(*) AS count FROM invheader a, clients b WHERE a.client_id=b.client_id");
+$row = mysql_fetch_array($result,MYSQL_ASSOC);
+$count = $row['count'];
+
+if( $count >0 ) {
+	$total_pages = ceil($count/$limit);
+} else {
+	$total_pages = 0;
+}
+if ($page > $total_pages) $page=$total_pages;
+$start = $limit*$page - $limit; // do not put $limit*($page - 1)
+$SQL = "SELECT a.id, a.invdate, b.name, a.amount,a.tax,a.total,a.note FROM invheader a, clients b WHERE "
+." a.client_id=b.client_id ORDER BY $sidx $sord LIMIT $start , $limit";
+$result = mysql_query( $SQL ) or die("Couldnt execute query.".mysql_error());
+
+if ( stristr($_SERVER["HTTP_ACCEPT"],"application/xhtml+xml") ) {
+header("Content-type: application/xhtml+xml;charset=utf-8"); } else {
+header("Content-type: text/xml;charset=utf-8");
+}
+$et = ">";
+
+echo "<?xml version='1.0' encoding='utf-8'?$et\n";
+echo "<rows>";
+echo "<page>".$page."</page>";
+echo "<total>".$total_pages."</total>";
+echo "<records>".$count."</records>";
+// be sure to put text data in CDATA
+while($row = mysql_fetch_array($result,MYSQL_ASSOC)) {
+	echo "<row id='". $row[id]."'>";			
+	echo "<cell>". $row[id]."</cell>";
+	echo "<cell>". $row[invdate]."</cell>";
+	echo "<cell><![CDATA[". $row[name]."]]></cell>";
+	echo "<cell>". $row[amount]."</cell>";
+	echo "<cell>". $row[tax]."</cell>";
+	echo "<cell>". $row[total]."</cell>";
+	echo "<cell><![CDATA[". $row[note]."]]></cell>";
+	echo "</row>";
+}
+echo "</rows>";		
+?>
+</XMP>					
+					</div>
+				</div>
+</div>			
+	</div>
+</div>
+<script type="text/javascript"> 
+jQuery().ready(function (){
+
+	    $.jgrid.no_legacy_api = true;
+        $.jgrid.useJSON = true;
+jQuery("#list1").jqGrid({
+   	url:'/jqgridDemos/xml/xmltype.xml',
+	datatype: "xml",
+
+   	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+
+   	colModel:[
+
+   		{name:'id',index:'id', width:75},
+
+   		{name:'invdate',index:'invdate', width:90},
+
+   		{name:'name',index:'name', width:100},
+
+   		{name:'amount',index:'amount', width:80, align:"right"},
+
+   		{name:'tax',index:'tax', width:80, align:"right"},		
+
+   		{name:'total',index:'total', width:80,align:"right"},		
+
+   		{name:'note',index:'note', width:150, sortable:false}		
+
+   	],
+
+   	rowNum:20,
+
+   	autowidth: true,
+	
+	autoheight:true,
+
+   	rowList:[10,20,30],
+
+   	pager: jQuery('#pager1'),
+
+   	sortname: 'id',
+
+    viewrecords: false,
+
+    sortorder: "desc",
+
+    caption:"XML Example"
+
+});
+
+jQuery("#list1").jqGrid('navGrid','#pager1',{edit:false,add:false,del:false});
+
+});
+
+</script>
+</body>
+</html>
