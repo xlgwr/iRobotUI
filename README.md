@@ -1,7 +1,7 @@
 iRobotUI
 ==
 
-iRobotUI is a good ui by jquery.
+iRobotUI is Rails UI App.
 
 Demo:
   http://xlgwr.github.com/iRobotUI/
